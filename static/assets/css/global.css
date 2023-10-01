@@ -1,0 +1,17 @@
+:root {
+    --mainHigher: #ffbb38;
+    --mainLower: #6AB187;
+    --backgroundFirst: #181b21;
+    --backgorundSecond: #0B0E13;
+    --textmain: rgba(255, 255, 255, .74);
+    --textsecondary: #1F3F49;
+    --nuetralborder: rgba(255, 255, 255, .34);
+    --button-gradient: linear-gradient(#ffcf23, #ff8d3a);
+    --icon-button: linear-gradient(145deg, rgba(254,223,88,1) 0%, rgba(245,193,52,1) 100%);
+    --divider: radial-gradient(circle, #fff 23%, #000);
+    --faq-gradient: linear-gradient(rgba(31, 31, 39, .79), rgba(45, 45, 54, .79));
+  }
+
+  * {
+    box-sizing: border-box;
+} 
