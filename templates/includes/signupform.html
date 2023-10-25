@@ -1,0 +1,73 @@
+
+{% block content %}
+  <h2>Sign Up</h2>
+  <form method="post"  enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.non_field_errors }} 
+    <!-- {% for field in form.visible_fields %}
+    <div class="form-group">
+      {{ field.label_tag }}
+      {{ field }}
+      {{ field.errors }}
+    </div>
+    {% endfor %} -->
+    <div class="form-header-block">
+        <div class="checkmark">
+            <i class="fa-solid fa-check"></i>
+        </div>
+        <h3>PERSONAL INFORMATION</h3>
+    </div>
+        <div class="form-items-block">
+            <div class="vertical-divider"></div>
+    <div style="width: 100%;">
+        {% if form.is_agent %}
+            {{ form.is_agent }}
+        {% endif %}
+    <div class="form-group">
+        <label for="{{ field.email.id_for_label }}" class="form-label">{{ form.email.label }}</label>
+      {{ form.email }}
+      <p class="form-error">{{ form.email.errors }}</p>
+    </div>
+    <div class="form-group">
+        <label for="{{ field.contact.id_for_label }}" class="form-label">{{ form.contact.label }}</label>
+      {{ form.contact }}
+      <p class="form-error">{{ form.contact.errors }}</p>
+    </div>
+    
+    <div class="form-group">
+        <label for="{{ field.first_name.id_for_label }}" class="form-label">{{ form.first_name.label }}</label>
+      {{ form.first_name }}
+      <p class="form-error">{{ form.first_name.errors }}</p>
+    </div>
+    <div class="form-group">
+        <label for="{{ field.last_name.id_for_label }}" class="form-label">{{ form.last_name.label }}</label>
+      {{ form.last_name }}
+      <p class="form-error">{{ form.last_name.errors }}</p>
+    </div>
+    <div class="form-group">
+        <label for="{{ field.address.id_for_label }}" class="form-label">{{ form.address.label }}</label>
+      {{ form.address }}
+      <p class="form-error">{{ form.address.errors }}</p>
+    </div>
+</div>
+</div>
+<div class="form-header-block">
+    <div class="checkmark">
+        <i class="fa-solid fa-check"></i>
+    </div>
+    <h3>PAYMENT INFORMATION</h3>
+</div>
+    <div class="form-items-block">
+        <div class="vertical-divider"></div>
+<div style="width: 100%;">
+<div class="form-group">
+    <label for="{{ field.payment_picture.id_for_label }}" class="form-label">{{ form.payment_picture.label }}</label>
+  {{ form.payment_picture }}
+  <p class="form-error">{{ form.payment_picture.errors }}</p>
+</div>
+
+</div>
+</div>
+    <button type="submit" class="main-btn">Sign Up</button>
+  </form>
+{% endblock %}

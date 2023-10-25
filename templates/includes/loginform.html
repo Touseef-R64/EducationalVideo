@@ -1,0 +1,14 @@
+{% block content %}
+<form method="post" action="{% url 'login' %}">
+    {% csrf_token %}
+    {{ form.username.label_tag }}
+    {{ form.username }}
+    {{ form.password.label_tag }}
+    {{ form.password }}
+    {{ form.errors }} {# Display form errors here #}
+    {% if login_error %}
+        <p class="error-message">Invalid email or password. Please try again.</p>
+    {% endif %}
+    <input type="submit" value="Login">
+</form>
+{% endblock %}

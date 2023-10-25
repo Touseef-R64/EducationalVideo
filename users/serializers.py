@@ -10,3 +10,9 @@ class UserRegistrationSerializer(serializers.Serializer):
     def create(self, validated_data):
         # Create and return a new user instance using the validated data
         return User.objects.create_user(**validated_data)
+
+
+class AgentSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = User
+        fields = ('id', 'email', 'first_name', 'last_name', 'payment_picture')  # Include the fields you want to serialize
